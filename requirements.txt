@@ -1,0 +1,11 @@
+openai
+langchain
+langchain_openai
+langchain_community
+chromadb
+docx2txt
+pypdf
+streamlit
+tiktoken
+streamlit
+streamlit-chat
