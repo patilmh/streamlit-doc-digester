@@ -8,6 +8,11 @@ from langchain.schema import(
 import streamlit as st
 from streamlit_chat import message
 
+# Chroma requires sqlite3 >= 3.35.0
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 from langchain_openai import OpenAIEmbeddings
 from langchain_community.vectorstores import Chroma
 
