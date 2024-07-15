@@ -1,5 +1,4 @@
 # streamlit-doc-digester
-# streamlit-custom-chatgpt
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://app-doc-digester.streamlit.app/)
 
 This RAG based document chatbot app with memory is created using Streamlit, Python and uses gpt-3.5-turbo model. 
