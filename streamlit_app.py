@@ -50,6 +50,7 @@ def create_embeddings(chunks):
     # vector_store = Chroma.from_documents(chunks, embeddings, persist_directory='./mychroma_db')
     return vector_store
 
+# Use vector store and chat history as context to answer user's questions
 def ask_and_get_answer(vector_store, query, chat_history, k=3):
     from langchain_openai import ChatOpenAI
     from langchain.chains import create_history_aware_retriever, create_retrieval_chain
@@ -90,7 +91,8 @@ def ask_and_get_answer(vector_store, query, chat_history, k=3):
         history_retriever_chain, 
         document_chain
         )
-
+    
+    # get response from the LLM
     response = conversational_retrieval_chain.invoke({
         "input": query,
         "chat_history": chat_history}
@@ -117,8 +119,8 @@ if __name__ == "__main__":
     import os
 
     # loading the OpenAI api key from .env
-    from dotenv import load_dotenv, find_dotenv
-    load_dotenv(find_dotenv(), override=True)
+    # from dotenv import load_dotenv, find_dotenv
+    # load_dotenv(find_dotenv(), override=True)
 
     st.set_page_config(
         page_title='Document Digester',
