@@ -9,3 +9,4 @@ streamlit
 tiktoken
 streamlit
 streamlit-chat
+pysqlite3-binary
